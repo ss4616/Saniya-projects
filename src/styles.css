@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss" source("../");
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+body {
+  @apply m-0;
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'IBM Plex Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+:root {
+  /* Inspection Ledger palette: ink charcoal ground, paper cream surfaces, rust-amber stamp accent */
+  --ink: oklch(0.19 0.012 260);
+  --ink-soft: oklch(0.26 0.014 260);
+  --paper: oklch(0.96 0.014 85);
+  --paper-dim: oklch(0.91 0.018 80);
+  --rust: oklch(0.58 0.15 40);
+  --rust-bright: oklch(0.68 0.16 45);
+  --ledger-line: oklch(0.32 0.014 260);
+
+  --background: var(--ink);
+  --foreground: var(--paper);
+  --card: var(--ink-soft);
+  --card-foreground: var(--paper);
+  --popover: var(--ink-soft);
+  --popover-foreground: var(--paper);
+  --primary: var(--rust);
+  --primary-foreground: oklch(0.16 0.01 40);
+  --secondary: var(--ink-soft);
+  --secondary-foreground: var(--paper);
+  --muted: var(--ink-soft);
+  --muted-foreground: oklch(0.68 0.02 80);
+  --accent: var(--rust);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.32 0.016 260);
+  --input: oklch(0.32 0.016 260);
+  --ring: var(--rust);
+  --radius: 0.25rem;
+}
+
+@theme inline {
+  --font-display: 'Fraunces', serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-paper-dim: var(--paper-dim);
+  --color-rust: var(--rust);
+  --color-rust-bright: var(--rust-bright);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 6px);
+  --radius-xl: calc(var(--radius) + 12px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      linear-gradient(oklch(0.32 0.014 260 / 0.35) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.32 0.014 260 / 0.35) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Fraunces', serif;
+  }
+
+  /* fixed grain overlay for texture without animating scroll content */
+  .grain-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  .stamp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 2px solid var(--rust);
+    color: var(--rust-bright);
+    transform: rotate(-2deg);
+    letter-spacing: 0.18em;
+  }
+
+  .ledger-tick::before {
+    content: '✓';
+    color: var(--rust-bright);
+    margin-right: 0.5rem;
+    font-weight: 600;
+  }
+
+  .fade-up {
+    animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
