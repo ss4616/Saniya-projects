@@ -28,8 +28,8 @@ use IBM Plex Mono, echoing test-report tickets and QA sign-off stamps.
   from the "View Resume" button
 - `content/jobs`, `content/education`, `content/projects` — markdown content
   rendered on both the homepage and the resume page
-- `public/resume.pdf` — placeholder resume file; replace with a real PDF
-- `public/headshot-on-white.jpg` — profile photo used in the hero and resume
+- `public/saniya saad.pdf` — placeholder resume file; replace with a real PDF
+- `public/saniyaimg.jpg` — profile photo used in the hero and resume
 
 ## Running locally
 
