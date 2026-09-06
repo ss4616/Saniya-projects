@@ -24,8 +24,8 @@ content/
   jobs/        # one markdown file per role
   projects/    # one markdown file per project
 public/
-  headshot-on-white.jpg  # profile photo
-  resume.pdf              # placeholder — replace with the real resume PDF
+  saniyaimg.jpeg  # profile photo
+  saniya saad.pdf              # placeholder — replace with the real resume PDF
 src/
   routes/
     index.tsx   # the entire one-page site: hero/about, skills, education,
