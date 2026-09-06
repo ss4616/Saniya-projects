@@ -20,7 +20,7 @@ function ResumePage() {
             Back to portfolio
           </Link>
           <a
-            href="/resume.pdf"
+            href="/saniya saad.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-sm bg-rust px-4 py-2 text-xs font-semibold uppercase tracking-widest text-primary-foreground hover:bg-rust-bright"
@@ -32,7 +32,7 @@ function ResumePage() {
 
         <div className="flex flex-col items-start gap-6 border-b border-border pb-10 sm:flex-row sm:items-center">
           <img
-            src="/headshot-on-white.jpg"
+            src="/saniyaimg.jpeg"
             alt="Portrait of Saniya Saad"
             className="h-28 w-24 rounded-sm object-cover ring-1 ring-border"
           />
