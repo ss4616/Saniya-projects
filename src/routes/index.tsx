@@ -172,7 +172,7 @@ function Home() {
           </p>
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <a
-              href="/resume.pdf"
+              href="/saniya saad.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-sm bg-rust px-5 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-transform hover:-translate-y-0.5 hover:bg-rust-bright"
@@ -199,7 +199,7 @@ function Home() {
           <div className="relative">
             <div className="absolute -inset-3 -z-10 rotate-2 border border-rust/40" />
             <img
-              src="/headshot-on-white.jpg"
+              src="/saniyaimg.jpeg"
               alt="Portrait of Saniya Saad"
               className="h-72 w-60 rotate-[-1.5deg] rounded-sm object-cover shadow-2xl ring-1 ring-border sm:h-80 sm:w-64"
             />
